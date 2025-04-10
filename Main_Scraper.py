@@ -353,7 +353,7 @@
 # Main_Scraper.py
 
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 import undetected_chromedriver as uc
 import time
 from selenium.webdriver.common.by import By
@@ -398,9 +398,9 @@ from Attorney_Correspondence_Information.Correspondent_e_mail_Authorized_Scraper
 
 def run_scraper(urls):
     # Google Sheets Authentication
-    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     creds = ServiceAccountCredentials.from_json_keyfile_name(
-        "G:\\My_Projects\\Uspto\\web-sracping-fc26a07ab6b1.json", scope
+        "G:\\My_Projects\\Uspto\\web-sracping-fc26a07ab6b1.json", scopes=scopes
     )
     client = gspread.authorize(creds)
     sheet = client.open("Uspto").sheet1

@@ -20,7 +20,7 @@ def scrape_file():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    if not file.filename.endswith('.txt'):
+    if file.filename is None or not file.filename.endswith('.txt'):
         return jsonify({"error": "Only .txt files are allowed"}), 400
 
     try:

@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import undetected_chromedriver as uc
+import undetected_chromedriver as uc # type: ignore
 import time
 
 def scrape_generated_text(driver, url):

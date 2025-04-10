@@ -29,3 +29,4 @@ def scrape_application_filing_date(driver):
     except Exception as e:
         print(f"❌ Error: {e}")
         return "Error"
+        
